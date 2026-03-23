@@ -1,0 +1,63 @@
+import Foundation
+
+func a(valor: String) {
+    if valor == "tecsup" {
+        print("tecsup: instituto tecnologico")
+    } else if valor == "mit" {
+        print("mit: ingenieria mundial")
+    }
+}
+
+func b(valor: String) {
+    if valor == "uni" {
+        print("uni: ingenieria peru")
+    }
+}
+
+func c(valor: String) {
+    if valor == "unalm" {
+        print("unalm: ciencias agrarias")
+    }
+}
+
+func d(valor: String) {
+    if valor == "upm" {
+        print("upm: politecnica madrid")
+    }
+}
+
+func buscar(valor: String, limite: Int) {
+    var intentos = 0
+    var encontrado = 0
+    
+    while intentos <= limite && encontrado == 0 {
+        if intentos == 0 {
+            if valor == "tecsup" || valor == "mit" {
+                a(valor: valor)
+                encontrado = 1
+            }
+        } else if intentos == 1 {
+            if valor == "uni" {
+                b(valor: valor)
+                encontrado = 1
+            }
+        } else if intentos == 2 {
+            if valor == "unalm" {
+                c(valor: valor)
+                encontrado = 1
+            }
+        } else if intentos == 3 {
+            if valor == "upm" {
+                d(valor: valor)
+                encontrado = 1
+            }
+        }
+        intentos += 1
+    }
+    
+    if encontrado == 0 {
+        print("no se encontro nada")
+    }
+}
+
+buscar(valor: "upm", limite: 3)
