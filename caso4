@@ -1,0 +1,11 @@
+let UNITARIO = 100.0
+let CANTIDAD = 12
+let DESCUENTO = 18.0
+
+var subtotal = UNITARIO * Double(CANTIDAD)
+var montodeldescuento = subtotal * (DESCUENTO / 100)
+var pagoTotal = subtotal - montodeldescuento
+
+print("Subtotal: \(subtotal)")
+print("Descuento: \(montodeldescuento)")
+print("Pago total: \(pagoTotal)")
