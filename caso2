@@ -1,0 +1,28 @@
+import Foundation
+
+func calcularCalorias(actividad: String, tiempo: Int) -> Double {
+    var caloriasPorMinuto: Double = 0.0
+    
+    if actividad.lowercased() == "dormir" {
+        caloriasPorMinuto = 1.08
+    } else if actividad.lowercased() == "reposo" {
+        caloriasPorMinuto = 1.66
+    }
+    
+    return caloriasPorMinuto * Double(tiempo)
+}
+
+let actividad = "reposo"
+let tiempo = 180
+
+if actividad.lowercased() != "dormir" && actividad.lowercased() != "reposo" {
+    print("Error: Actividad inválida. Solo se permite 'dormir' o 'reposo'.")
+} else if tiempo <= 0 {
+    print("Error: El tiempo debe ser un número entero positivo.")
+} else {
+    let calorias = calcularCalorias(actividad: actividad, tiempo: tiempo)
+    
+    print("Actividad: \(actividad.uppercased())")
+    print("Tiempo: \(tiempo) minutos")
+    print("Calorías consumidas: \(calorias)")
+}
